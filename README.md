@@ -4,58 +4,61 @@
 
 ## Description
 
-NetPracticeは、実際のコンピュータネットワークを模したWeb上のシミュレーション環境を使用し、適切なネットワーク設定を行うことで、ネットワークの基礎知識を習得する課題です。
+NetPractice is a project for learning the fundamentals of computer networking by configuring networks in a web-based simulation environment.
 
-主に、IPアドレスやサブネットマスクによるネットワークの分割、スイッチとルーターの役割、ネットワークインターフェースの設定、ルーティングテーブルによる通信経路の制御について学びます。
+It covers network segmentation using IP addresses and subnet masks, the roles of switches and routers, network interface configuration, and the use of routing tables to control packet forwarding.
 
-全10レベルで指定された通信条件を満たすようにIPアドレスやルーティングを設定し、異なるネットワーク間でパケットが正しく送受信される仕組みを理解することを目的としています。
+The goal is to configure IP addresses and routes to meet the communication requirements of all 10 levels and understand how packets travel between different networks.
 
 ## Instructions
 
-### インストールと起動
-42の課題ページから配布アーカイブをダウンロードし、任意の作業ディレクトリに配置します。ファイル名が net_practice.1.10.tgzの場合、ターミナルで以下のコマンドを実行します。配布ファイル名が異なる場合は読み替えてください。
+### Installation and Launch
+
+Python 3, Bash, and a web browser are required. No compilation is needed.
+
+Download the archive from the 42 project page and place it in a working directory of your choice. If the archive is named net_practice.1.10.tgz, run the following commands in a terminal. Adjust the filename if your archive has a different name.
 
 ```bash
-# アーカイブを解凍
+# Extract the archive
 tar -xf net_practice.1.10.tgz
 
-# 解凍されたディレクトリに移動
+# Enter the extracted directory
 cd net_practice
 
-# NetPracticeを起動
+# Launch NetPractice
 ./run.sh
 ```
 
-このリポジトリ内の展開済みの環境を使用する場合は、リポジトリ直下から `cd net_practice`、`./run.sh` を実行します。
+To use the environment already extracted in this repository, run `cd net_practice` followed by `./run.sh` from the repository root.
 
-`run.sh` はローカルWebサーバーを起動し、ブラウザでトレーニング画面を開きます。
-起動できない場合は、`net_practice` ディレクトリ内で以下を実行し、ブラウザで `http://localhost:49242` を開きます。
+`run.sh` starts a local web server and opens the training interface in your browser.
+If it does not start correctly, run the following command inside the `net_practice` directory and open `http://localhost:49242` in your browser.
 
 ```bash
 python3 -m http.server 49242
 ```
 
-ポートが使用中の場合は別の番号を指定し、ブラウザのURLも同じ番号に変更してください。サーバーを停止するには、起動したターミナルで `Ctrl+C` を押します。
+If the port is already in use, choose a different port and update the browser URL accordingly. To stop the server, press `Ctrl+C` in the terminal where it is running.
 
-### トレーニングの開始
+### Starting the Training
 
-提出用の設定を作成するときは、開始画面に名前を入力します。
-ログイン名に対応する個人用の構成で、全10レベルに取り組みます。ランダムな構成で練習する場合は、`evaluation` タブも利用できます。
+When creating configurations for submission, enter your 42 login on the start screen.
+Complete all 10 levels using the personal configuration associated with your login. To practice with random configurations, you can also use the `evaluation` tab.
 
-### 設定ファイルのエクスポート
+### Exporting Configuration Files
 
-各レベルでは、編集可能な欄のIPアドレス、サブネットマスク、ルーティングテーブルなどを設定し、画面上部に指定された通信条件を満たす必要があります。通信に失敗した場合は、画面下部のログで原因を確認できます。
+At each level, adjust the IP addresses, subnet masks, routing tables, and other editable fields to meet the communication requirements shown at the top of the page. If communication fails, check the logs at the bottom of the page to identify the cause.
 
-設定が完了したら、以下の手順で設定ファイルを保存します。
+Once the configuration is complete, save it as follows:
 
-1. Check againをクリックし、すべての通信目標がOKになっていることを確認する。
-2. Get my configをクリックして設定ファイルをエクスポートする。
-3. エクスポートしたファイルを、対応するレベルが分かる名前（level1.jsonなど）で提出用Gitリポジトリのルート（直下）に保存する。
-4. Next levelで次のレベルに進み、全10レベルで同じ手順を繰り返す。
+1. Click Check again and confirm that all communication goals show OK.
+2. Click Get my config to export the configuration file before moving to the next level.
+3. Save the exported file at the root of your submission Git repository with a name that identifies its level, such as level1.json.
+4. Click Next level and repeat these steps for all 10 levels.
 
-### 提出方法
+### Submission
 
-全10レベルを完了し、Get my configからエクスポートした設定ファイルを**各レベルにつき1個、合計10個、提出用Gitリポジトリのルートに配置**します。README.mdも同じ場所に置きます。
+Complete all 10 levels and place the configuration files exported using Get my config **at the root of your submission Git repository: one file per level, for a total of 10 files**. Place README.md in the same location.
 
 ```text
 .
@@ -75,34 +78,34 @@ python3 -m http.server 49242
 
 ## Resources
 
-### 参考資料
+### References
 
-以下は、本課題で扱うネットワークの基礎知識を確認できる参考資料です。
+The following resources explain the networking fundamentals covered in this project. The linked articles are in Japanese.
 
-- [ネットワークとは？わかりやすく仕組みや種類、構築方法を解説](https://www.qtpro.jp/blog/network/14.html)
-- [TCP/IPとは？ネットワーク通信のしくみをやさしく解説](https://www.hokuyo-aut.co.jp/products/data.php?id=487)
-- [IPアドレスとサブネットマスクの基礎](https://www.secuavail.com/kb/practical-post/ip-address-subnet-mask/)
-- [CIDR完全ガイド｜CIDR表記の意味とIPアドレスの関係を図解](https://envader.plus/article/52)
-- [レイヤ２（L2）スイッチとレイヤ３（L3）スイッチ、ルーターとの違いは？](https://qiita.com/FScom_Japan/items/a59e3a6065ee787cf33a)
-- [OSI参照モデルとは？](https://www.cloudflare.com/ja-jp/learning/ddos/glossary/open-systems-interconnection-model-osi/)
+- [What Is a Network? How It Works, Network Types, and Setup](https://www.qtpro.jp/blog/network/14.html)
+- [What Is TCP/IP? An Introduction to Network Communication](https://www.hokuyo-aut.co.jp/products/data.php?id=487)
+- [IP Address and Subnet Mask Basics](https://www.secuavail.com/kb/practical-post/ip-address-subnet-mask/)
+- [A Complete Guide to CIDR: CIDR Notation and IP Addresses](https://envader.plus/article/52)
+- [Differences Between Layer 2 Switches, Layer 3 Switches, and Routers](https://qiita.com/FScom_Japan/items/a59e3a6065ee787cf33a)
+- [What Is the OSI Model?](https://www.cloudflare.com/ja-jp/learning/ddos/glossary/open-systems-interconnection-model-osi/)
 
-### 学習したネットワークの概念
+### Networking Concepts Studied
 
-本課題では、主に以下のネットワーク技術について学習しました。
+This project covers the following networking concepts:
 
-* TCP/IPアドレッシング：TCP/IPネットワークでIPアドレスを使ってインターフェースを識別し、通信先を指定する仕組み。本課題ではIPv4を扱う。
-* サブネットマスク・CIDR：IPアドレスをネットワーク部とホスト部に分割し、ネットワークの範囲を定義する仕組み。
-* デフォルトゲートウェイ：宛先に対するより具体的な経路がない場合に、パケットを転送する先のルーター。転送先には、直接接続されたネットワーク上で到達可能なルーターのIPアドレスを指定する。
-* ルーター：異なるネットワーク間でパケットを転送するネットワーク機器。
-* スイッチ：主に同一LAN内の機器を接続し、MACアドレスをもとにフレームを転送するネットワーク機器。
-* ルーティングテーブル：宛先ネットワークに応じて、パケットの転送先を決定するための情報。
-* OSI参照モデル：ネットワーク通信の機能を、物理層、データリンク層、ネットワーク層、トランスポート層、セッション層、プレゼンテーション層、アプリケーション層の7つに分類した概念モデル。一般的なL2スイッチは主に第2層、ルーターは第3層で動作する。
+* TCP/IP addressing: Using IP addresses to identify network interfaces and specify communication destinations in a TCP/IP network. This project uses IPv4.
+* Subnet masks and CIDR: Defining network boundaries by separating the network and host portions of an IP address.
+* Default gateway: The router to which packets are forwarded when no more specific route matches the destination. Its IP address must be reachable on a directly connected network.
+* Routers: Network devices that forward packets between different networks.
+* Switches: Network devices that primarily connect devices within the same LAN and forward frames based on MAC addresses.
+* Routing tables: Information used to determine where packets should be forwarded based on their destination network.
+* OSI model: A conceptual model that divides network communication into seven layers: physical, data link, network, transport, session, presentation, and application. A typical Layer 2 switch operates mainly at Layer 2, while a router operates at Layer 3.
 
-### AIの使用について
+### Use of AI
 
-主に、AIは以下の目的で活用しました。
+AI was primarily used for the following tasks:
 
-* IPアドレス、サブネットマスク、CIDRなどの基礎概念の理解。
-* ルーター、スイッチ、デフォルトゲートウェイ、ルーティングテーブルの役割の整理。
-* 通信エラーの原因や、パケットが送信元から宛先まで到達する仕組みの理解。
-* READMEの文章構成や表現の改善、課題資料との要件の照合、および参考資料のリンクの補完。
+* Understanding basic concepts such as IP addresses, subnet masks, and CIDR.
+* Clarifying the roles of routers, switches, default gateways, and routing tables.
+* Understanding the causes of communication errors and how packets travel from source to destination.
+* Improving and translating the README, checking it against the project requirements, and adding reference links.
