@@ -13,10 +13,7 @@ NetPracticeは、実際のコンピュータネットワークを模したWeb上
 ## Instructions
 
 ### インストールと起動
-
-Python 3、Bash、およびWebブラウザを使用します。コンパイルは不要です。
-
-42の課題ページから配布アーカイブをダウンロードし、任意の作業ディレクトリに配置します。ファイル名が `net_practice.1.10.tgz` の場合、ターミナルで以下のコマンドを実行します。配布ファイル名が異なる場合は読み替えてください。
+42の課題ページから配布アーカイブをダウンロードし、任意の作業ディレクトリに配置します。ファイル名が net_practice.1.10.tgzの場合、ターミナルで以下のコマンドを実行します。配布ファイル名が異なる場合は読み替えてください。
 
 ```bash
 # アーカイブを解凍
@@ -31,7 +28,8 @@ cd net_practice
 
 このリポジトリ内の展開済みの環境を使用する場合は、リポジトリ直下から `cd net_practice`、`./run.sh` を実行します。
 
-`run.sh` はローカルWebサーバーを起動し、ブラウザでトレーニング画面を開きます。起動できない場合は、`net_practice` ディレクトリ内で以下を実行し、ブラウザで `http://localhost:49242` を開きます。
+`run.sh` はローカルWebサーバーを起動し、ブラウザでトレーニング画面を開きます。
+起動できない場合は、`net_practice` ディレクトリ内で以下を実行し、ブラウザで `http://localhost:49242` を開きます。
 
 ```bash
 python3 -m http.server 49242
@@ -41,7 +39,8 @@ python3 -m http.server 49242
 
 ### トレーニングの開始
 
-提出用の設定を作成するときは、開始画面に自分の42ログイン名（`yukurosa`）を入力します。ログイン名に対応する個人用の構成で、全10レベルに取り組みます。ランダムな構成で練習する場合は、`evaluation` タブも利用できます。
+提出用の設定を作成するときは、開始画面に名前を入力します。
+ログイン名に対応する個人用の構成で、全10レベルに取り組みます。ランダムな構成で練習する場合は、`evaluation` タブも利用できます。
 
 ### 設定ファイルのエクスポート
 
@@ -49,14 +48,14 @@ python3 -m http.server 49242
 
 設定が完了したら、以下の手順で設定ファイルを保存します。
 
-1. `Check again` をクリックし、すべての通信目標が `OK` になっていることを確認する。
-2. **次のレベルへ進む前に**、`Get my config` をクリックして設定ファイルをエクスポートする。
-3. エクスポートしたファイルを、対応するレベルが分かる名前（`level1.json` など）で提出用Gitリポジトリのルート（直下）に保存する。
-4. `Next level` で次のレベルに進み、全10レベルで同じ手順を繰り返す。
+1. Check againをクリックし、すべての通信目標がOKになっていることを確認する。
+2. Get my configをクリックして設定ファイルをエクスポートする。
+3. エクスポートしたファイルを、対応するレベルが分かる名前（level1.jsonなど）で提出用Gitリポジトリのルート（直下）に保存する。
+4. Next levelで次のレベルに進み、全10レベルで同じ手順を繰り返す。
 
 ### 提出方法
 
-全10レベルを完了し、`Get my config` からエクスポートした設定ファイルを**各レベルにつき1個、合計10個、提出用Gitリポジトリのルートに配置**します。`README.md` も同じ場所に置きます。
+全10レベルを完了し、Get my configからエクスポートした設定ファイルを**各レベルにつき1個、合計10個、提出用Gitリポジトリのルートに配置**します。README.mdも同じ場所に置きます。
 
 ```text
 .
@@ -73,11 +72,6 @@ python3 -m http.server 49242
 └── level10.json
 ```
 
-提出前に、ファイル名と保存場所、全10レベル分がそろっていることを確認し、Gitにコミットして提出先へプッシュします。評価対象は提出リポジトリ内の成果物です。
-
-### 相互評価
-
-評価では、制限時間内にランダムな3レベルを解く必要があります。外部ツールの使用は認められていませんが、`bc` のような簡単な電卓は許可されています。
 
 ## Resources
 
@@ -86,12 +80,11 @@ python3 -m http.server 49242
 以下は、本課題で扱うネットワークの基礎知識を確認できる参考資料です。
 
 - [ネットワークとは？わかりやすく仕組みや種類、構築方法を解説](https://www.qtpro.jp/blog/network/14.html)
-- TCP/IP・デフォルトゲートウェイ・経路選択：[RFC 1122 — Requirements for Internet Hosts — Communication Layers](https://www.rfc-editor.org/rfc/rfc1122)（特に3.3.1節）
-- サブネットマスク：[RFC 950 — Internet Standard Subnetting Procedure](https://www.rfc-editor.org/rfc/rfc950)
-- CIDR：[RFC 4632 — Classless Inter-domain Routing (CIDR)](https://www.rfc-editor.org/rfc/rfc4632)
-- ルーター：[Cloudflare — What is a router?](https://www.cloudflare.com/learning/network-layer/what-is-a-router/)
-- スイッチとルーターの違い：[Cloudflare — What is a network switch?](https://www.cloudflare.com/learning/network-layer/what-is-a-network-switch/)
-- OSI参照モデル：[Cloudflare — What is the OSI Model?](https://www.cloudflare.com/learning/ddos/glossary/open-systems-interconnection-model-osi/)
+- [TCP/IPとは？ネットワーク通信のしくみをやさしく解説](https://www.hokuyo-aut.co.jp/products/data.php?id=487)
+- [IPアドレスとサブネットマスクの基礎](https://www.secuavail.com/kb/practical-post/ip-address-subnet-mask/)
+- [CIDR完全ガイド｜CIDR表記の意味とIPアドレスの関係を図解](https://envader.plus/article/52)
+- [レイヤ２（L2）スイッチとレイヤ３（L3）スイッチ、ルーターとの違いは？](https://qiita.com/FScom_Japan/items/a59e3a6065ee787cf33a)
+- [OSI参照モデルとは？](https://www.cloudflare.com/ja-jp/learning/ddos/glossary/open-systems-interconnection-model-osi/)
 
 ### 学習したネットワークの概念
 
